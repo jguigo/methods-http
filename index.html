@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: black;
+            color:bisque;
+        }
+    </style>
+</head>
+<body>
+    
+    <form class="col-6">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" aria-describedby="nome">
+        </div>
+        <div class="mb-3">
+            <label for="atracoes" class="form-label">Atrações</label>
+            <input type="text" class="form-control" id="atracoes" aria-describedby="atracoes">
+            <small>insira o nome dos artistas separados por vírgula</small>
+        </div>
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea name="descricao" id="descricao" class="form-control" rows="5"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="data" class="form-label">Data</label>
+            <input type="datetime" name="data" id="data" class="form-control"
+                placeholder="00/00/00 00:00">
+        </div>
+        <div class="mb-3">
+            <label for="lotacao" class="form-label">Lotação (número de ingressos disponiveis)</label>
+            <input type="number" class="form-control" id="lotacao" aria-describedby="lotacao">
+        </div>
+        <button type="submit" class="btn btn-primary">enviar</button>
+    </form>
+
+    <script src="./metodos-http.js"></script>
+</body>
+</html>
