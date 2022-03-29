@@ -19,7 +19,16 @@ function urlId() {
       .splice(getIdUrl.indexOf("?") + 1, getIdUrl.length)
       .join("");
    return getIdUrl;
+   
 }
+const formataData = (data) => {
+   let d = data.split('');
+   
+   let dd = d.slice(8,10).join('') + '/' + d.slice(5,7).join('') + '/' + d.slice(0,4).join('');
+   let dt = d.slice(11,16).join('')
+   
+   return `${dd} ${dt}`
+};
 
 if (nomeDoLink === "/index.html") {
    //tabela
@@ -67,7 +76,7 @@ if (nomeDoLink === "/index.html") {
       exibirTudoMesmo.forEach((item) => {
          tabela.innerHTML += `<tr>
             <th scope="row">${exibirTudoMesmo.indexOf(item) + 1}</th>
-            <td>${item.updated_at}</td>
+            <td>${formataData(item.scheduled)}</td>
             <td>${item.name}</td>
             <td>${item.attractions}</td>
             <td>
@@ -152,7 +161,7 @@ if (nomeDoLink === '/editar-evento.html') {
       inputBanner.value = retornoBody.poster;
       inputAtracoes.value = retornoBody.attractions;
       inputDescricao.value = retornoBody.description;
-      inputData.value = retornoBody.scheduled;
+      inputData.value = retornoBody.scheduled.split('').slice(0,16).join('');
       inputLotacao.value = retornoBody.number_tickets;
    };
    mostrarEvento(urlId());
