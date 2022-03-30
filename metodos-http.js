@@ -30,7 +30,7 @@ const formataData = (data) => {
    return `${dd} ${dt}`
 };
 
-if (nomeDoLink === "/index.html") {
+if (nomeDoLink === "/padmin.html") {
    //tabela
    const tabela = document.querySelector("tbody");
 
